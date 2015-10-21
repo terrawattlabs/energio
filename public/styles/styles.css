@@ -1,0 +1,68 @@
+.full-page-width {
+	display: flex;
+	justify-content: center;
+}
+
+.setup-form {
+	min-width: 30%;
+	display: flex;
+	flex-direction: column;
+}
+
+.setup-form-item {
+	padding: 1em 0em 1em 0em;
+}
+
+.dashboard-holder {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+}
+
+.dash-row {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	min-height: 10em;
+}
+
+.dash-item {
+	background-color: #ecf0f1;
+	border-radius: .5em;
+	margin: .5em;
+	padding: .5em;
+}
+
+.dash-half {
+	width: 45%;
+	min-width: 200px;
+}
+
+.dash-full {
+	width: 100%;
+}
+
+.login-page {
+	margin-top: 5em;
+}
+
+.login-text {
+	text-align: center;
+	margin-top: 3em;
+}
+
+.split-divs {
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+
+}
+
+.goodMsg {
+	color: green;
+}
+
+.errorMsg {
+	color: red;
+}

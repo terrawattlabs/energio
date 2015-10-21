@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SnapWatt</title>
+	 <!-- Loading Bootstrap -->
+    <link href="Flat-UI-master/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="Flat-UI-master/bootstrap/css/prettify.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+	<script type="text/javascript">
+		Parse.initialize("wSB5NoO6it3vcnG65H7sPbFouMOd6wWdexWzhfhZ", "tqHiizMBoPx2zMGr3MAFPX8tvb0avdCEFkviedST");
+	</script>
+
+</head>
+<body>
+<div class="container">
+<div class="nav-bar-custom">
+	
+</div>
+	<div class="main_content">
+		<div class="main_half">
+			<h1 id="main_header">SnapWatt</h1>
+			<h4 id="main_sub_header">The simplest way to monitor your home's energy consumption.</h4>
+			<ul class="val_prop_list">
+				<li>Get your electricity spending under control</li>
+				<li>No surprises when your bill arrives</li>
+				<li>Customized tips to avoid wasteful spending</li>
+				<li>Always free, get your first tip today!</li>
+			</ul>
+			<form id="signUpForm">
+				<div class="form-group">
+					<div class="input-group home-input-group">
+		   				<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+		   				<input type="text" class="form-control home_input" placeholder="Name" id="name" onkeyup="validateName()"/>
+		  			</div> 
+		  			<div class="helper_text_holder">
+		  				<label id="name_helper" class="helper_text"></label>
+		  			</div> 
+		  			
+				</div>
+				<div class="form-group">
+					<div class="input-group home-input-group">
+		   				<span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+		   				<input type="text" class="form-control home_input" placeholder="Phone" id="phone" onkeyup="validatePhone()" />
+		  			</div>
+		  			<div class="helper_text_holder">
+		  				<label id="phone_helper" class="helper_text"></label>
+		  			</div>  
+		  			
+				</div>
+				<div class="form-group">
+					<div class="input-group home-input-group">
+		   				<span class="input-group-addon"><span class="glyphicon glyphicon-flash"></span></span>
+		   				<input type="text" class="form-control home_input" placeholder="Utility Provider" id="utility"/>
+		  			</div>
+		  			<div class="helper_text_holder">
+		  				<label id="phone_helper" class="helper_text"></label>
+		  			</div>  
+		  			
+				</div>
+				<button disabled class="btn btn-large btn-primary large_submit" id="signupSubmit">Submit</button>
+			</form>
+
+
+		</div><!--main half end-->
+		<div class="main_half main_img_holder">
+			<img id="screenshotimg" src="iphone.png" />
+		</div>
+	</div><!--maincontent end -->
+	<div class="second_content">
+		<div class="section_title">
+			<h2 id="second_header">How It Works</h2>
+		</div>
+		<div class="section_content">
+			<div class="section_half main_img_holder">
+					<img id="howitworks-img" src="iphone.png" />
+			</div>
+			<div class="section_half twothirds">
+				<ol>
+					<li>Sign up with just your name and phone number</li>
+					<li>You'll get periodic text messages about your energy consumption</li>
+					<li>These messages will include:</li>
+					<ul>
+						<li>Tips on how to control your spending</li>
+						<li>No guessing: actual energy costs via text <span class="coming_soon">Coming Soon</span></li>
+						<li>Projected monthly energy consumption <span class="coming_soon">Coming Soon</span></li>
+					</ul>
+					<li>Save money, energy, and the planet</li>
+				</ol>
+			</div>
+		</div>
+		
+	</div><!-- second section end -->
+	<div class="third_content">
+		<div class="section_title">
+			<h2 id="third_header">Why it Matters</h2>
+		</div>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner carousel-custom">
+    <div class="item active">
+      	<div class="fact-headliner">
+      		<h1 class="fact-title">$240 Billion</h1>
+      	</div>
+      <div class="carousel-caption">
+        Annual spending on residential energy in the U.S. 
+      </div>
+    </div>
+    <div class="item">
+      <div class="fact-headliner">
+      		<h1 class="fact-title">$2,200</h1>
+      	</div>
+      <div class="carousel-caption">
+        Amount a typical U.S. family spends on energy bills
+      </div>
+    </div>
+    <div class="item">
+      <div class="fact-headliner">
+      		<h1 class="fact-title">35%</h1>
+      	</div>
+      <div class="carousel-caption">
+        Amount of energy a typical U.S. family wastes
+      </div>
+    </div>
+  </div>
+
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+		
+	</div>
+</div>
+
+  <!-- Load JS here for greater good =============================-->
+    <script src="Flat-UI-master/js/jquery-1.8.3.min.js"></script>
+    <script src="Flat-UI-master/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="Flat-UI-master/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="Flat-UI-master/js/bootstrap.min.js"></script>
+    <script src="Flat-UI-master/js/bootstrap-select.js"></script>
+    <script src="Flat-UI-master/js/bootstrap-switch.js"></script>
+    <script src="Flat-UI-master/js/flatui-checkbox.js"></script>
+    <script src="Flat-UI-master/js/flatui-radio.js"></script>
+    <script src="Flat-UI-master/js/jquery.tagsinput.js"></script>
+    <script src="Flat-UI-master/js/jquery.placeholder.js"></script>
+    <script src="Flat-UI-master/js/typeahead.js"></script>
+    <script src="Flat-UI-master/bootstrap/js/google-code-prettify/prettify.js"></script>
+    <script src="Flat-UI-master/js/application.js"></script>
+
+<script type="text/javascript">
+//heler text colors
+	var errorColor = '#e74c3c';
+	var goodColor = '#1abc9c';
+	var nameReady = false;
+	var phoneReady = false;
+
+function validateName () {
+	var currentName = $('#name').val();
+	
+	
+
+	if (currentName.length == 0) {
+		producePrompt('Name is Required', 'name_helper', errorColor);
+		nameReady = false;
+		submitReady();
+		addAClass('name', '')
+		return false
+	}
+	// if(!currentName.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)) {
+	// 	producePrompt('First and Last name Please', 'name_helper', errorColor);
+	// 	nameReady = false;
+	// 	submitReady();
+	// 	return false
+	//  }
+		producePrompt("Welcome, " + currentName, 'name_helper', goodColor);
+		nameReady = true;
+		submitReady();
+
+		return true
+};
+
+function validatePhone () {
+	var currentPhone = $('#phone').val();
+	if (currentPhone.length == 0) {
+		producePrompt('Phone is Required', 'phone_helper', errorColor);
+		phoneReady = false;
+		submitReady();
+		return false
+	}
+	if(!currentPhone.match(/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/)) {
+		producePrompt('We need a real US number please', 'phone_helper', errorColor);
+		phoneReady = false;
+		submitReady();
+		return false
+	}
+		producePrompt("Now thats a cool number!" , 'phone_helper', goodColor);
+		phoneReady = true;
+		submitReady();
+		return true
+};
+
+function producePrompt (msg, loc, color) {
+	$('#' + loc).html(msg).css('color', color);
+
+};
+
+function addAClass (loc, cls) {
+	$('#' + loc).addClass(cls);
+};
+
+function removeAClass (loc, cls) {
+	$('#' + loc).removeClass(cls)
+};
+
+function submitReady () {
+	if (phoneReady == true && nameReady == true) {
+		$('#signupSubmit').removeAttr('disabled');
+	} else {
+		console.log('in the disabled part');
+		$('#signupSubmit').attr('disabled', "true");
+	}
+}
+
+
+//submit the form
+	$('#signupSubmit').click(signupUser);
+
+	function signupUser (event) {
+		console.log('function run');
+		//take symbols out of phone number
+		var stripedPhone = $('#phone').val().replace(/[^\d]/g, '');
+		// remove '1' if its the first number
+		var processedPhone = stripedPhone.replace(/^[1]/, '');
+		// add '+1' to the phone number
+		var readyPhone = '+1' + processedPhone;
+
+		event.preventDefault();
+			var name = $('#name').val();
+			var email = $('#email').val();
+			var phone = "+1" + processedPhone;
+			var utility = $('#utility').val();
+			var snapchat = $('#snapchat').val();
+			var password = "snapwatt";
+
+			var user = new Parse.User();
+
+			var welcomeText = "Welcome to SnapWatt, " + name + ", the world's simplest energy monitor.";
+
+			var numbers = [];
+			numbers.push(phone);
+
+		user.set("username",phone);
+		user.set("password", password);
+		user.set("email", email)
+		user.set("name", name);
+		user.set("phone", phone);
+		user.set("utility", utility);
+		user.set("snapchat", snapchat);
+		 
+		user.signUp(null, {
+		  success: function(user) {
+		    console.log('parse success');
+		    Parse.Cloud.run('sendEnergyTexts', { msgBody: welcomeText , numbersSet: numbers }, {
+		    	success: function (result) {
+		    		console.log(result);
+		    		alert("Thanks for Signing Up, " + name + "! You should have received a confirmation text! More tips to come!")
+		    		location.reload();
+		    	},
+		    	error: function (error) {
+		    		alert("We tried to send you a text, but it did not work. Is this your number? " + phone + " Please try a different number")
+		    	}
+		    });
+		  },
+		  error: function(user, error) {
+		    // Show the error message somewhere and let the user try again.
+		    alert("Error: " + error.code + " " + error.message);
+		  }
+		});
+	};
+		
+
+</script>
+
+</body>
+</html>

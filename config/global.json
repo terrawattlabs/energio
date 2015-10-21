@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "SnapWatt": {
+            "applicationId": "wSB5NoO6it3vcnG65H7sPbFouMOd6wWdexWzhfhZ", 
+            "masterKey": "3xQuPekuBDRWOLQSuC7hRUynAtNndGGagtxXSJx5"
+        }, 
+        "_default": {
+            "link": "SnapWatt"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.19"
+    }
+}

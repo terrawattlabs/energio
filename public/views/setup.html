@@ -1,0 +1,22 @@
+
+<h4>Thanks, {{fName}}. Now let's finish setting you up!</h4>
+<form ng-submit="setup()">
+	<div class="full-page-width">
+
+		<div class="setup-form">
+			
+			<div class="input-group home-input-group setup-form-item">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+				<input type="text" class="form-control home_input" placeholder="Mobile Number" id="phone" ng-keyup="validatePhone()" ng-model="phone"/>
+			</div> <p ng-class="{true: 'goodMsg', false: 'errorMsg'}[isStatus]">{{phone_helper}}</p>
+			<div class="input-group home-input-group setup-form-item">
+				<span class="input-group-addon"><span class="glyphicon glyphicon-flash"></span></span>
+				<input type="text" class="form-control home_input" placeholder="Meter Reading (Optional)" id="reading" ng-model="reading"/>
+			</div>
+			<button class="btn btn-primary btn-lg" ng-disabled="disableSubmit">Submit</button>
+		</div>
+		
+	</div>
+</form>
+
+

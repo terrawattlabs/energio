@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Energio | Track, Budget, Save</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+	<script type="text/javascript">
+		Parse.initialize("wSB5NoO6it3vcnG65H7sPbFouMOd6wWdexWzhfhZ", "tqHiizMBoPx2zMGr3MAFPX8tvb0avdCEFkviedST");
+
+		window.fbAsyncInit = function() {
+		    Parse.FacebookUtils.init({ // this line replaces FB.init({
+		      appId      : '427225484096809', // Facebook App ID
+		      status     : true,  // check Facebook Login status
+		      cookie     : true,  // enable cookies to allow Parse to access the session
+		      xfbml      : true,  // initialize Facebook social plugins on the page
+		      version    : 'v1.0' // point to the latest Facebook Graph API version
+		    });
+		 
+		    // Run code after the Facebook SDK is loaded.
+		  };
+
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "http://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- Load Angular -->
+	<!--angular stuff -->
+    <script type="text/javascript" src="scripts/angular/angular.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-cookies.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-resource.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-sanitize.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-route.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-animate.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-growl/build/angular-growl.js"></script>
+    <script type="text/javascript" src="assets/angulartics-0.15.20/dist/angulartics.min.js"></script>
+    <script type="text/javascript" src="assets/angulartics-0.15.20/dist/angulartics-ga.min.js"></script>
+    <script type="text/javascript" src="scripts/angular/ng-audio.min.js"></script>
+    <script type="text/javascript" src="scripts/angular/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-payments.js"></script>
+    <script type="text/javascript" src="scripts/angular-ui-select/dist/select.js"></script>
+    <script type="text/javascript" src="scripts/angular-widget.js"></script>
+    <script type="text/javascript" src="scripts/scrollspydirectives.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-tour-tpls.js"></script>
+    <script type="text/javascript" src="scripts/Chart.js-master/Chart.js"></script>
+    <script type="text/javascript" src="scripts/angular/angular-chart.js/angular-chart.js"></script>
+
+  
+
+
+
+
+
+    <!-- include the app files -->
+    <script type="text/javascript" src="scripts/app.js"></script>
+
+    <!-- add all of the controllers here -->
+    <script type="text/javascript" src="scripts/controllers/homeController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/setupController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/dashController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/locationController.js"></script>
+     <script type="text/javascript" src="scripts/controllers/testController.js"></script>
+     <script type="text/javascript" src="scripts/controllers/navController.js"></script>
+
+
+
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/rangy/1.2.3/rangy-core.js"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular-sanitize.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/textAngular/1.2.2/textAngular.min.js'></script>
+
+
+
+
+	 <!-- Loading Bootstrap -->
+    <link href="Flat-UI-master/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="Flat-UI-master/bootstrap/css/prettify.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="scripts/angular/angular-growl/build/angular-growl.min.css">
+
+    <!-- Loading Flat UI -->
+    <link href="Flat-UI-master/css/flat-ui.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="scripts/angular/angular-chart.js/angular-chart.css">
+	
+
+</head>
+<body ng-app="snapwattApp">
+	<div ng-include="'views/partials/nav.html'"></div>
+	<div class="container" ng-view=""></div>
+	<div growl></div>
+</body>
+</html>

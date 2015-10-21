@@ -1,0 +1,71 @@
+<div class="dashboard-holder">
+	<div class="dash-row">
+		<div class="dash-item dash-half">
+			<div class="btn-group" dropdown is-open="status.isopen" style="">
+		        <button type="button" class="btn btn-primary btn-lg dropdown-toggle" ng-disabled="disabled">
+		         Location: {{selLocation.get('friendly')}}<span class="caret"></span>
+		        </button>
+		        <span class="dropdown-arrow dropdown-arrow-inverse"></span>
+		        <ul class="dropdown-menu dropdown-inverse project-dropdown" role="menu">
+		          <li ng-repeat="loc in locationlist"><a ng-click="changeSelectedLocation(loc)" class="dropdown-toggle">{{ loc.get('friendly') }}</a></li>
+		        </ul>
+		     </div>
+
+		     <br>
+		     <br>
+		     <button class="btn btn-default btn-wide" ng-click="goToPage('/location/' + selLocation.id)">Edit</button>
+		</div>
+		<div class="dash-item dash-half">
+			<h6>Enter a new reading</h6>
+			<form ng-submit="saveMeterRead()" class="form-inline">
+				<div class="form-group">
+					<div class="input-group home-input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-flash"></span></span>
+						<input type="text" class="form-control" placeholder="Meter Reading" ng-model="meter_read"/>
+					</div>
+
+				</div>
+				<button class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	
+	</div>
+	<div class="dash-row">
+		<div class=" dash-item dash-full">
+			<div style="width: 100%; text-align: right;">
+			<span class="glyphicon glyphicon-refresh" ng-click="refreshReadings()" style="cursor: pointer;"></span>
+				<span class="glyphicon glyphicon-th-list" ng-click="chartToggle()" style="cursor: pointer;" ng-show="chart"></span>
+				<span class="glyphicon glyphicon-stats" ng-click="chartToggle()" style="cursor: pointer;" ng-hide="chart"></span>
+			</div>
+			<table class="table" ng-hide="chart">
+				<thead>
+					<tr>
+						<td>Time</td>
+						<td>Reading (kWh)</td>
+						<td>Daily Usage (kWh)</td>
+						<td>Daily Cost</td>
+						<td>Monthly Cost</td>
+						<td>% Change</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="reading in processedReadings">
+						<td>{{reading.createdAt}}</td>
+						<td>{{reading.measured}}</td>
+						<td>{{reading.dailyUse}}</td>
+						<td>{{reading.dailyCost}}</td>
+						<td>{{reading.monthlyCost}}</td>
+						<td ng-style="set_color(reading)"><span ng-if="reading.changeDirection == 'up'" class="glyphicon glyphicon-arrow-up"></span><span ng-if="reading.changeDirection == 'down'" class="glyphicon glyphicon-arrow-down"></span> {{reading.change}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class=" dash-item dash-full" ng-show="chart">
+				<p style="font-size:.8em;">kWh per day</p>
+				<canvas id="bar" class="chart chart-bar" data="data" labels="labels" options="options"></canvas>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

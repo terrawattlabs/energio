@@ -1,0 +1,32 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
+     <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-02">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" href="#/">Energio</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navbar-collapse-02">
+            <ul class="nav navbar-nav">
+                
+            </ul>
+
+             <div id="isthisthebutton" class="btn-group nav navbar-nav navbar-right" dropdown is-open="status.isopen" style="margin-right: 2em; margin-top: .25em;">
+                <button type="button" class="btn btn-primary dropdown-toggle" ng-disabled="disabled" ng-hide="isLoggedIn()">
+                  {{ fName }} <span class="caret"></span>
+                </button>
+                <span class="dropdown-arrow dropdown-arrow-inverse"></span>
+                <ul class="dropdown-menu dropdown-inverse" role="menu">
+                 
+                  <li class="divider"></li>
+                  <li><button class="btn btn-danger btn-sm" ng-click="logOut()">Log Out</button></li>
+                </ul>
+              </div>     
+            <!-- Inverse look -->
+            <div style="color: white;" id="nav-sub" id="navbar-collapse-02">
+              
+            </div>
+                 
+          </div><!-- /.navbar-collapse -->
+
+</nav>
